@@ -31,4 +31,11 @@ describe Micropost do
 			user_id: 1)
 		expect(micropost).not_to be_valid
 	end 
+
+	it "is not valid without user_id" do 
+		micropost = Micropost.create(
+			content: "content",
+			user_id: nil)
+		expect(micropost).not_to be_valid
+	end 
 end 
