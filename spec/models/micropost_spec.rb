@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 describe Micropost do 
+	it "has a valid factory" do 
+		expect(FactoryGirl.build(:micropost)).to be_valid
+	end 
+
 	it "is not valid with content > 140 chars" do 
 		long_content = "A" * 141
 		micropost = Micropost.create(

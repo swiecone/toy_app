@@ -1,4 +1,5 @@
-FactoryGirl define do 
+FactoryGirl.define do 
 	factory :micropost do 
 		content "AAAAAAAAAAAAAAA"
 	end 
+end 
