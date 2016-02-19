@@ -17,33 +17,25 @@ describe User do
 	end 
 
 	it "is not valid without name or email" do 
-		user = User.create(
-			name: nil,
-			email: nil )
+		user = FactoryGirl.build(:user, name: nil, email: nil)
 		expect(user).not_to be_valid
 	end 
 
 	
 	it "is not valid without name" do 
-			user = User.create(
-			name: nil,
-			email: "Alex@gmail.com")
+			user = FactoryGirl.build(:user, name: nil)
 		expect(user).not_to be_valid
 
 	end 
 
 	it "is not valid without mail" do 
-			user = User.create(
-			name: "Alex",
-			email: nil)
+			user = FactoryGirl.build(:user, email: nil)
 		expect(user).not_to be_valid
 	end 
 
 
 	it "is valid with mail and name" do 
-			user = User.create(
-			name: "Alex",
-			email: "alex@example.com")
+			user = FactoryGirl.build(:user)
 		expect(user).to be_valid
 	end 
 
