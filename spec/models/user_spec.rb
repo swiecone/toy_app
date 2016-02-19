@@ -13,29 +13,29 @@ require 'rails_helper'
 describe User do 
 
 	it "has a valid factory" do 
-		expect(FactoryGirl.build(:user)).to be_valid
+		expect(build(:user)).to be_valid
 	end 
 
 	it "is not valid without name or email" do 
-		user = FactoryGirl.build(:user, name: nil, email: nil)
+		user = build(:user, name: nil, email: nil)
 		expect(user).not_to be_valid
 	end 
 
 	
 	it "is not valid without name" do 
-			user = FactoryGirl.build(:user, name: nil)
+			user = build(:user, name: nil)
 		expect(user).not_to be_valid
 
 	end 
 
 	it "is not valid without mail" do 
-			user = FactoryGirl.build(:user, email: nil)
+			user = build(:user, email: nil)
 		expect(user).not_to be_valid
 	end 
 
 
 	it "is valid with mail and name" do 
-			user = FactoryGirl.build(:user)
+			user = build(:user)
 		expect(user).to be_valid
 	end 
 
