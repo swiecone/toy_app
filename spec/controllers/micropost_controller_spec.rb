@@ -3,7 +3,12 @@ require 'rails_helper'
 describe MicropostsController do 
 
 	describe 'GET #index' do 
-			it "populates an array of all microposts" do
+		it "populates an array of all microposts" do
+			mpost1 = create(:micropost)
+			mpost2 = create(:micropost)
+			mpost3 = create(:micropost)
+			get :index
+			expect(assigns(:microposts)).to match_array([mpost1, mpost2, mpost3])
 		 end # finishes describe 'GET #index'
 	end
 	
@@ -16,7 +21,7 @@ describe MicropostsController do
 	end	
 
 	describe 'GET #new' do 
-		it "assigns a new Micropost to @user"
+		it "assigns a new Micropost to @user" 
 		it "renders the :new template"
 	end 
 
