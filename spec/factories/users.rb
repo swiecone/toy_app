@@ -1,8 +1,8 @@
-FactoryGirl.define do 
-	factory :user do 
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-		# Generating fake name and email with Faker
-		name { Faker::Name.name }
-		email { Faker::Internet.email }
-	end 
+FactoryGirl.define do
+  factory :user do
+    name "MyString"
+    email "MyString"
+  end
 end
