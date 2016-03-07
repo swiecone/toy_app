@@ -102,9 +102,6 @@ footer {
   color: #777;
   a {
   	color: $gray;
-  	&:hover {
-  		color: $gray-darker;
-  	}
   }
   small {
   	float: left;
@@ -193,4 +190,9 @@ input {
   .form-control {
     color: #f00;
   }
+}
+
+#flash-close:hover {
+  color: #000;
+  text-decoration: bold;
 }
