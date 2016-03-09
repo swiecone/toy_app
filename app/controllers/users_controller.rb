@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+  class UsersController < ApplicationController
   def new
   	@user = User.new
   end
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create 
   	@user = User.new(user_params) # Not the final implementation! 
   	if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome, #{@user.name} to the Sample App!"
   		redirect_to @user
   	else 
   		render 'new'
