@@ -196,3 +196,13 @@ input {
   color: #000;
   text-decoration: bold;
 }
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: 1px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
