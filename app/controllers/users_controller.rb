@@ -22,6 +22,10 @@
   	end 
   end
 
+  def edit 
+    @user = User.find_by(params[:id])
+  end 
+  
   private
 
   	def user_params
