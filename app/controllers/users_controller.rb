@@ -1,5 +1,5 @@
   class UsersController < ApplicationController
-    before_action :logged_in_user, only [:edit, :update]
+    before_action :logged_in_user, only: [:edit, :update]
 
   def new
   	@user = User.new
@@ -47,7 +47,7 @@
     def logged_in_user
       unless logged_in?
         flash[:danger] = "Please log in"
-        redirect_to logged_in_url
+        redirect_to root_path
       end 
     end
 end
