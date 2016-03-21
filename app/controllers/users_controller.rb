@@ -54,6 +54,12 @@
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless @user == current_user
-    end
+      # redirect_to(root_url) unless current_user?(@user)
+      if !current_user?(@user)
+        flash[:danger] = "#{@user.name}, you don't have access to this area of the site."
+        redirect_to(root_url)    
+      else
+        # grant access to edit section
+     end
+   end
 end
