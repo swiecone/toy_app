@@ -6,6 +6,10 @@
 				<span id="gravatar-image"><%= gravatar_for @user, size: 200 %></span>
  				<%= @user.name %> 
 			</h1>
+
+		</section>
+		<section id="back_to_users_link">
+			<%= link_to "[Back to User List]", users_path %>
 		</section>
 	</aside>
 </div>
