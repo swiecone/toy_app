@@ -2,7 +2,8 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   setup do
-    @user = users(:one)
+    @user = users(:michael)
+    @other_user = users(:archer)
   end
 
   test "should get index" do
@@ -58,9 +59,24 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should destroy user" do
     assert_difference('User.count', -1) do
-      delete :destroy, id: @user
-    end
-
+    delete :destroy, id: @user
+  end
     assert_redirected_to users_path
   end
+
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'User.count' do
+    delete :destroy, id: @user
+  end
+    assert_redirected_to login_url
+  end
+
+  test "should redirect destroy when logged in as a non-admin" do
+     log_in_as(@other_user)
+     assert_no_difference 'User.count' do
+     delete :destroy, id: @user
+  end
+     assert_redirected_to root_url
+  end
+
 end
